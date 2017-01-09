@@ -67,12 +67,10 @@ public class MainActivity extends AppCompatActivity {
         CheckBox raj_kapoorCheckBox = (CheckBox) findViewById(R.id.raj_kapoor);
         boolean checkedRaj_kapoor = raj_kapoorCheckBox.isChecked();
 
-
         finalScore = calculateScore(checkedNehru, checkHimalaya, checkedHindi, checkedEnglish, checkedBengali, checkedUrdu,
                 checkedGandhi, checkedAmbedkar, checkedRaj_kapoor, checkedHindu_kush);
 
-        String finalMessage = displayMessage(msg);
-        displayMessage(finalMessage);
+        displayMessage("Your score is:" + finalScore);
 
         finalScore = 0;
         score = 0;
