@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.R.attr.checked;
+import static android.R.attr.duration;
 import static android.R.attr.name;
 import static android.R.id.button2;
 import static android.R.id.button3;
@@ -34,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
         String capital = name.getText().toString().toLowerCase();
 
         if(capital.matches("new delhi")){
-            score = score + 1;
-        }
+            score++;        }
 
         CheckBox hindiCheckBox = (CheckBox) findViewById(R.id.hindi);
         boolean checkedHindi = hindiCheckBox.isChecked();
@@ -67,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
         CheckBox raj_kapoorCheckBox = (CheckBox) findViewById(R.id.raj_kapoor);
         boolean checkedRaj_kapoor = raj_kapoorCheckBox.isChecked();
 
+
         finalScore = calculateScore(checkedNehru, checkHimalaya, checkedHindi, checkedEnglish, checkedBengali, checkedUrdu,
                 checkedGandhi, checkedAmbedkar, checkedRaj_kapoor, checkedHindu_kush);
 
-        displayMessage("Your score is: " + finalScore);
+        String finalMessage = displayMessage(msg);
+        displayMessage(finalMessage);
 
         finalScore = 0;
         score = 0;
@@ -84,17 +86,15 @@ public class MainActivity extends AppCompatActivity {
     ) {
         if (checkedEnglish && checkedHindi){
             if (!(checkedBengali || checkedUrdu)){
-                score = score + 1;
-            }
+                score++;            }
         }
 
         if (checkedNehru){
             if(!(checkedAmbedkar || checkedGandhi || checkedRajKapoor))
-            score = score + 1;
-        }
+                score++;        }
 
-        if (checkHimalaya && !checkedHinduKush){
-            score = score + 1;        }
+        if (checkHimalaya){
+            score++;        }
         return score ;
     }
 
@@ -102,11 +102,21 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView finalScoreTextView = (TextView) findViewById(R.id.final_score);
         finalScoreTextView.setText(message);
+
         if (finalScore == 4) {
             Toast.makeText(this, "Congratulations! You have a perfect score!", Toast.LENGTH_SHORT).show();}
+        else if (finalScore == 3){
+            Toast.makeText(this, "Your final score is 3!", Toast.LENGTH_SHORT).show();
+            }
+        else if (finalScore == 2){
+            Toast.makeText(this, "Your final score is 2", Toast.LENGTH_SHORT).show();
+        }
+        else if (finalScore == 1){
+            Toast.makeText(this, "Your final score is 1", Toast.LENGTH_SHORT).show();
+        }
         else if (finalScore == 0){
             Toast.makeText(this, "You need to read some wikipedia articles on India", Toast.LENGTH_SHORT).show();
-            }
+        }
     }
 
     // Reset Score
