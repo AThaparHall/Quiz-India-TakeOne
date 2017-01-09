@@ -67,12 +67,6 @@ public class MainActivity extends AppCompatActivity {
         CheckBox raj_kapoorCheckBox = (CheckBox) findViewById(R.id.raj_kapoor);
         boolean checkedRaj_kapoor = raj_kapoorCheckBox.isChecked();
 
-        if (checkedEnglish && checkedHindi){
-            if(!checkedBengali && !checkedUrdu){
-                score = score + 1;
-            }
-        }
-
         finalScore = calculateScore(checkedNehru, checkHimalaya, checkedHindi, checkedEnglish, checkedBengali, checkedUrdu,
                 checkedGandhi, checkedAmbedkar, checkedRaj_kapoor, checkedHindu_kush);
 
@@ -83,31 +77,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Calculate Score
-    private int calculateScore(boolean checkedNehru, boolean checkedBengali, boolean checkedUrdu, boolean checkHimalaya,
-                               boolean checkedHindi, boolean checkedEnglish, boolean checkedGandhi, boolean checkedAmbedkar, boolean checkedRajKapoor,
+    private int calculateScore(boolean checkedNehru, boolean checkHimalaya, boolean checkedHindi,
+                               boolean checkedEnglish, boolean checkedBengali, boolean checkedUrdu,
+                               boolean checkedGandhi, boolean checkedAmbedkar, boolean checkedRajKapoor,
                                boolean checkedHinduKush
     ) {
-        /* boolean correctLanguage = checkedHindi && checkedEnglish;
-        boolean wrongLanguage = checkedBengali || checkedUrdu;
-        boolean wrongPM = checkedAmbedkar || checkedGandhi || checkedRajKapoor;
-
-        if (checkedHindi && checkedEnglish){
-            if(checkedUrdu & checkedBengali){
-                score = score;
+        if (checkedEnglish && checkedHindi){
+            if (!(checkedBengali || checkedUrdu)){
+                score = score + 1;
             }
-            else{
-                score += score;
-            }
-        }*/
-
-
-        /*
-        if (correctLanguage && !wrongLanguage){
-            score += score;
-        }*/
+        }
 
         if (checkedNehru){
-            score += score;
+            if(!(checkedAmbedkar || checkedGandhi || checkedRajKapoor))
+            score = score + 1;
         }
 
         if (checkHimalaya && !checkedHinduKush){
@@ -119,10 +102,10 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView finalScoreTextView = (TextView) findViewById(R.id.final_score);
         finalScoreTextView.setText(message);
-        if (finalScore == 5) {
+        if (finalScore == 4) {
             Toast.makeText(this, "Congratulations! You have a perfect score!", Toast.LENGTH_SHORT).show();}
         else if (finalScore == 0){
-            //Toast.makeText(this, "You need to read some wikipedia articles on India", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You need to read some wikipedia articles on India", Toast.LENGTH_SHORT).show();
             }
     }
 
