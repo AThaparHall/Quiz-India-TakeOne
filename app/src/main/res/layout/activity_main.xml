@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:orientation="vertical" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.android.quiz_india.MainActivity">
+
+    <TextView
+        style="@style/CustomQuestionStyle"
+        android:text="@string/question_one" />
+
+    <EditText
+        android:id="@+id/capital"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Capital"
+        android:inputType="" />
+
+    <TextView
+        style="@style/CustomQuestionStyle"
+        android:text="@string/question_two"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            style="@style/CustomOptionSyle"
+            android:id="@+id/hindi"
+            android:text="@string/hindi" />
+
+        <CheckBox
+            style="@style/CustomOptionSyle"
+            android:id="@+id/english"
+            android:text="@string/english" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/urdu"
+            style="@style/CustomOptionSyle"
+            android:text="@string/urdu"/>
+
+        <CheckBox
+            style="@style/CustomOptionSyle"
+            android:id="@+id/bengali"
+            android:text="@string/bengali" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/CustomQuestionStyle"
+        android:text="@string/question_three"/>
+      <RadioButton
+          android:id="@+id/himalaya"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/himalayan"/>
+
+    <RadioButton
+        android:id="@+id/hindu_kush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hindu_kush"/>
+
+    <TextView
+        style="@style/CustomQuestionStyle"
+        android:text="@string/question_four"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/gandhi"
+            style="@style/CustomOptionSyle"
+            android:text="@string/gandhi" />
+
+        <CheckBox
+            android:id="@+id/nehru"
+            style="@style/CustomOptionSyle"
+            android:text="@string/nehru" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/ambedkar"
+            style="@style/CustomOptionSyle"
+            android:text="@string/ambedkar" />
+
+        <CheckBox
+            android:id="@+id/raj_kapoor"
+            style="@style/CustomOptionSyle"
+            android:text="@string/raj_kapoor" />
+    </LinearLayout>
+
+    <Button
+        style="@style/CustomButtonStyle"
+        android:text="@string/submit"
+        android:onClick="submitScore" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/final_score"
+        android:id="@+id/final_score"
+        android:padding="10dp" />
+
+    <Button
+        style="@style/CustomButtonStyle"
+        android:onClick="Reset"
+        android:text="@string/reset"/>
+
+</LinearLayout>
+</ScrollView>

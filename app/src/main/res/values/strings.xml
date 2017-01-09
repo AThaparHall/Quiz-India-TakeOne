@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Quiz-India</string>
+    <string name="question_one">1) What is the capital of India?</string>
+    <string name="question_two">2) What is/are the national language(s) of India?</string>
+    <string name="question_three">3) Which of the following mountain ranges delineate the northern border of India?"</string>
+    <string name="question_four">4) Who was the first Prime Minister of India?"</string>
+    <string name="hindi">Hindi</string>
+    <string name="english">English</string>
+    <string name="urdu">Urdu</string>
+    <string name="bengali">Bengali</string>
+    <string name="himalayan">Himalayan Mountain Range</string>
+    <string name="hindu_kush">HIndu Kush Mountain Range</string>
+    <string name="gandhi">Mahatma Gandhi</string>
+    <string name="nehru">Pandit Nehru</string>
+    <string name="ambedkar">Dr Ambedkar</string>
+    <string name="raj_kapoor">Raj Kapoor</string>
+    <string name="submit">Submit</string>
+    <string name="final_score">Final Score:</string>
+    <string name="reset">Reset</string>
+
+</resources>
